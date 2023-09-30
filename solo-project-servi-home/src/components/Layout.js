@@ -36,7 +36,7 @@ const Layout = ({ children }) => {
                     !!user 
                     ? <button onClick={(e) => onLogout(e)} className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded transition-colors duration-200">Log Out</button>
                     : <>
-                        <Link href="/cleanersignup" className="hover:text-yellow-500 transform hover:scale-105 transition-transform duration-200">Cleaner</Link>
+                        <Link data-cy='cleaner-signup' href="/cleanersignup" className="hover:text-yellow-500 transform hover:scale-105 transition-transform duration-200">Cleaner</Link>
                         <Link href="/signup" className="hover:text-yellow-500 transform hover:scale-105 transition-transform duration-200">Sign Up</Link> 
                         <Link href="/login" className="hover:text-yellow-500 transform hover:scale-105 transition-transform duration-200">Login</Link>
                     </>

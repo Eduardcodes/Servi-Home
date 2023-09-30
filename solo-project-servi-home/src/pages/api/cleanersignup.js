@@ -6,6 +6,7 @@ const secretKey = process.env.JWT_SECRET;
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
+    
     const { username, email, password } = req.body;
 
     try {

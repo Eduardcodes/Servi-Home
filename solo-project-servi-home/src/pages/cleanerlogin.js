@@ -63,7 +63,6 @@ function Login() {
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full p-3 border text-black border-gray-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-400 focus:ring-opacity-50"
-                        required
                     />
                 </div>
                 <div className="mb-6">
@@ -82,6 +81,7 @@ function Login() {
                 )}
                 <button
                     type="submit"
+                    data-cy="cleaner-login-submit"
                     className="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                 >
                     Login

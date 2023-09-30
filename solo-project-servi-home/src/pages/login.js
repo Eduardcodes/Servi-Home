@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { useAuth } from "../lib/store";
 
 function Login() {
+  // const setAuth = useAuth.getState((state)=>state.setAuth)
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -37,6 +38,7 @@ function Login() {
       const data = await response.json();
       localStorage.setItem("auth", JSON.stringify(data.user));
       useAuth.getState().setAuth(data.user)
+      // setAuth(data.user)
 
       if (response.status === 200) {
         
