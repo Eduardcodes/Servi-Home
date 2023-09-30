@@ -10,13 +10,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test" : "jest --watch"
+    "test": "jest --watch"
   },
   "dependencies": {
     "@prisma/client": "^5.3.1",
     "autoprefixer": "10.4.15",
     "bcrypt": "^5.1.1",
     "cloudinary": "^1.40.0",
+    "cypress": "^13.3.0",
     "dotenv": "^16.3.1",
     "jsonwebtoken": "^9.0.2",
     "next": "13.5.1",

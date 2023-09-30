@@ -1,6 +1,6 @@
 describe('User should be able to login in the APP', () => {
   it('Check if the user can go on the login page', () => {
-    cy.visit('http://localhost:3000/login');
+    cy.visit('http://localhost:3002/login');
     cy.url().should('include', '/login');
 
     cy.log('Check if the input email exist and can insert email');
@@ -26,7 +26,7 @@ describe('User should be able to login in the APP', () => {
     // TODO: Ask Gerry if has a good way to do it!
 
     cy.log(`User should be able to log out`);
-    cy.visit('http://localhost:3000/logedin');
+    cy.visit('http://localhost:3002/logedin');
     cy.url().should('include', '/logedin');
 
     cy.log('Check if the input email exist and can insert email');
