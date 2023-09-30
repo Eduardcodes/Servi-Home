@@ -1,6 +1,6 @@
 describe('using the app as a cleaner', () => {
   it('can sign up new cleaner user', () => {
-    cy.visit('http://localhost:3000');
+    cy.visit('http://localhost:3002');
 
     cy.get('[data-cy="cleaner-signup"]').click();
 
@@ -19,7 +19,7 @@ describe('using the app as a cleaner', () => {
     cy.get('[data-cy="cleaner-signup-submit"]').click();
   });
   it('can login existing cleaner users', () => {
-    cy.visit('http://localhost:3000');
+    cy.visit('http://localhost:3002');
 
     cy.get('[data-cy="cleaner-signup"]').click();
 
