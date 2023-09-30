@@ -9,7 +9,7 @@
 
 describe('Test without log in can write review', () => {
     it('input into the form and check the right information will display on page', () => {
-      cy.visit('http://localhost:3000/reviews')
+      cy.visit('http://localhost:3002/reviews')
       cy.get('input[name="title"]').type('testTitle')
       cy.get('input[name="title"]').should('have.value', 'testTitle')
       cy.get('input[name="name"]').type('testName')

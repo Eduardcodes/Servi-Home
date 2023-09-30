@@ -1,6 +1,6 @@
 describe('User should be able to add new revitalize rug service', () => {
   before(() => {
-    cy.visit('http://localhost:3000/login');
+    cy.visit('http://localhost:3002/login');
     cy.get('input[name="email"]').click().type('test@gmail.com');
     cy.get('input[name="password"]').click().type('123');
     cy.get('button[type=submit]').click();
@@ -50,7 +50,7 @@ describe('User should be able to add new revitalize rug service', () => {
 
 describe('User should be able to add new Renew Your Furniture service', () => {
   before(() => {
-    cy.visit('http://localhost:3000/login');
+    cy.visit('http://localhost:3002/login');
     cy.get('input[name="email"]').click().type('test@gmail.com');
     cy.get('input[name="password"]').click().type('123');
     cy.get('button[type=submit]').click();
@@ -88,7 +88,7 @@ describe('User should be able to add new Renew Your Furniture service', () => {
 
 describe('User should be able to add new Elevate Your Tabletops service', () => {
   before(() => {
-    cy.visit('http://localhost:3000/login');
+    cy.visit('http://localhost:3002/login');
     cy.get('input[name="email"]').click().type('test@gmail.com');
     cy.get('input[name="password"]').click().type('123');
     cy.get('button[type=submit]').click();
