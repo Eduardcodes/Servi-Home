@@ -102,13 +102,14 @@ function CleanerSignUp() {
                     />
                 </div>
                 <button
+                    data-cy="cleaner-signup-submit"
                     type="submit"
                     className="w-full bg-green-600 text-white p-3 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
                 >
                     Sign Up
                 </button>
                 <p className="mt-5 text-gray-600">
-                    <Link href="/cleanerlogin" className="text-green-600 hover:underline">Already have an account? Login</Link>
+                    <Link data-cy="cleaner-existing-user" href="/cleanerlogin" className="text-green-600 hover:underline">Already have an account? Login</Link>
                 </p>
             </form>
         </div>
