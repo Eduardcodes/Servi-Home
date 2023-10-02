@@ -1,53 +1,53 @@
-type User = {
-  id        :String  
-  email     :String  
-  password  :String
-  username  :String
-  createdAt :Date
-  addresses :Address[]
-  bookings  :Booking[]
-}
+export type User = {
+  id: string;
+  email: string;
+  password: string;
+  username: string;
+  createdAt: Date;
+  addresses: Address[];
+  bookings: Booking[];
+};
 
-type Booking = {
-  id        : String        
-  user      :User          
-  cleanerId? :String
-  cleaner?   : Cleaner    
-  addressId : String
-  address   : Address        
-  services  : Service[]  
-  status    : String 
-  createdAt : Date       
-}
-type Cleaner = {
-  id       : String   
-  username : String
-  email    : String   
-  password : String
-  createdAt: Date
-  bookings : Booking[] 
-}
+export type Booking = {
+  id: string;
+  user: User;
+  cleanerId?: string;
+  cleaner?: Cleaner;
+  addressId: string;
+  address: Address;
+  services: Service[];
+  status: string;
+  createdAt: Date;
+};
+export type Cleaner = {
+  id: string;
+  username: string;
+  email: string;
+  password: string;
+  createdAt: Date;
+  bookings: Booking[];
+};
 
-type Address = {
-  id     : String   
-  detail : String  
-  userId : String
-  user   : User     
-  bookings : Booking[]
-}
+export type Address = {
+  id: string;
+  detail: string;
+  userId: string;
+  user: User;
+  bookings: Booking[];
+};
 
-type Service = {
-  id          :String 
-  type        :String 
-  imageUrl?   :String
-  booking     :Booking  
-  bookingId   :String
-}
+export type Service = {
+  id: string;
+  type: string;
+  imageUrl?: string;
+  booking: Booking;
+  bookingId: string;
+};
 
-type Review = {
-  id      :String 
-  title   :String
-  name    :String
-  content :String
-  createdAt: Date 
-}
+export type Review = {
+  id: string;
+  title: string;
+  name: string;
+  content: string;
+  createdAt: Date;
+};
