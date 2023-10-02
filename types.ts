@@ -1,53 +1,53 @@
-export type User = {
-  id        :string  
-  email     :string  
-  password  :string
-  username  :string
+type User = {
+  id        :String  
+  email     :String  
+  password  :String
+  username  :String
   createdAt :Date
   addresses :Address[]
   bookings  :Booking[]
 }
 
-export type Booking = {
-  id?        : string        
-  user      : User          
-  cleanerId? :string
+type Booking = {
+  id        : String        
+  user      :User          
+  cleanerId? :String
   cleaner?   : Cleaner    
-  addressId? : string
+  addressId : String
   address   : Address        
   services  : Service[]  
-  status?: string 
-  createdAt? : Date       
+  status    : String 
+  createdAt : Date       
 }
-export type Cleaner = {
-  id       : string   
-  username : string
-  email    : string   
-  password? : string
-  createdAt?: Date
-  bookings? : Booking[] 
+type Cleaner = {
+  id       : String   
+  username : String
+  email    : String   
+  password : String
+  createdAt: Date
+  bookings : Booking[] 
 }
 
-export type Address = {
-  id     : string   
-  detail : string  
-  userId : string
+type Address = {
+  id     : String   
+  detail : String  
+  userId : String
   user   : User     
   bookings : Booking[]
 }
 
-export type Service = {
-  id          :string 
-  type        :string 
-  imageUrl?   :string
+type Service = {
+  id          :String 
+  type        :String 
+  imageUrl?   :String
   booking     :Booking  
-  bookingId   :string
+  bookingId   :String
 }
 
-export type Review = {
-  id      :string 
-  title   :string
-  name    :string
-  content :string
+type Review = {
+  id      :String 
+  title   :String
+  name    :String
+  content :String
   createdAt: Date 
 }
