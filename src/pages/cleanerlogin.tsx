@@ -12,15 +12,16 @@ function Login() {
 
   const router = useRouter();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+    console.log(typeof(e))
+    const { name, value } = e.currentTarget;
     setFormData({
       ...formData,
       [name]: value,
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e : React.FormEvent) => {
     e.preventDefault();
 
     try {

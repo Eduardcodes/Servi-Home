@@ -1,4 +1,15 @@
 import React, { useState } from 'react';
+// import {Service} from '../../types'
+
+type Service = {
+  title: string
+  rugmeasure: string
+  rugcondition: string
+  measure: string
+  condition: string
+  material: string
+  servicetable: string
+}
 
 function Logedin() {
   const [services, setServices] = useState([]);
@@ -13,11 +24,12 @@ function Logedin() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
 
-  const addService = (service) => {
+
+  const addService = (service:Service) => {
     setServices([...services, service]);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e : React.FormEvent) => {
     e.preventDefault();
     const localAuthData = localStorage.getItem('auth');
     const auth = JSON.parse(localAuthData);
