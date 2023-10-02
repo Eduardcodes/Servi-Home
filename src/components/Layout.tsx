@@ -2,14 +2,17 @@ import Link from 'next/link';
 import { useAuth } from '../lib/store';
 import { useRouter } from 'next/router';
 
-const Layout = ({ children }) => {
-  const user = useAuth((state) => state.auth);
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  const { user, removeAuth } = useAuth((state) => ({
+    user: state.auth,
+    removeAuth: state.removeAuth,
+  }));
   const router = useRouter();
 
   const onLogout = (e) => {
     localStorage.removeItem('auth');
     localStorage.removeItem('token');
-    useAuth.getState().removeAuth();
+    removeAuth();
     router.push('/');
   };
 
@@ -17,13 +20,15 @@ const Layout = ({ children }) => {
     <div className="bg-gray-900 font-sans text-gray-200">
       <header className="p-6 flex justify-between items-center">
         <div className="flex items-center space-x-4">
-          <img
-            src="/home.png"
-            alt="Logo"
-            width={50}
-            height={50}
-            className="rounded shadow-lg transform hover:scale-105 transition-transform duration-200"
-          />
+          <Link href="/">
+            <img
+              src="/home.png"
+              alt="Logo of the Servi home company that is a house with a heart in the middle"
+              width={50}
+              height={50}
+              className="rounded shadow-lg transform hover:scale-105 transition-transform duration-200"
+            />
+          </Link>
           <h1 className="text-4xl font-semibold text-yellow-500">Servi Home</h1>
         </div>
 
