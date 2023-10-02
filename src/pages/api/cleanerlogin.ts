@@ -1,7 +1,7 @@
 import { db } from "../../lib/db";
 import { compare } from "bcrypt";
 import { sign } from "jsonwebtoken";
-import type { Cleaner } from "../../../types"
+
 import { NextApiRequest, NextApiResponse } from "next";
 
 
@@ -13,7 +13,7 @@ export default async function handler(
     if(req.method === 'POST') {
       const{email, password} = req.body
       try {
-        const cleaner: Cleaner = await db.cleaner.findUnique({
+        const cleaner = await db.cleaner.findUnique({
           where: { email },
           select: { id: true, email: true, username: true, password: true } 
         });
