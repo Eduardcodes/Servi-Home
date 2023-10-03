@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 export default function Principal() {
   return (
-    <div className="font-serif">
-      <div className="bg-gradient-to-r from-zinc-500 to-zinc-600 flex-row p-12 justify-around items-center h-screen text-white flex">
+    <div className=" md:h-full font-serif ">
+      <div className=" flex-col-reverse bg-gradient-to-r from-zinc-500 to-zinc-600 md:flex-row p-12 justify-around items-center md:h-screen text-white flex">
         <div className="flex flex-col justify-center space-y-8">
           <h1 className="text-6xl font-bold leading-tight">
             Transform your space <br />
