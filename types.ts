@@ -1,4 +1,4 @@
-type User = {
+export type User = {
   id        :String  
   email     :String  
   password  :String
@@ -8,7 +8,7 @@ type User = {
   bookings  :Booking[]
 }
 
-type Booking = {
+export type Booking = {
   id        : String        
   user      :User          
   cleanerId? :String
@@ -19,7 +19,7 @@ type Booking = {
   status    : String 
   createdAt : Date       
 }
-type Cleaner = {
+export type Cleaner = {
   id       : String   
   username : String
   email    : String   
@@ -28,7 +28,7 @@ type Cleaner = {
   bookings : Booking[] 
 }
 
-type Address = {
+export type Address = {
   id     : String   
   detail : String  
   userId : String
@@ -36,7 +36,7 @@ type Address = {
   bookings : Booking[]
 }
 
-type Service = {
+export type Service = {
   id          :String 
   type        :String 
   imageUrl?   :String
@@ -44,7 +44,7 @@ type Service = {
   bookingId   :String
 }
 
-type Review = {
+export type Review = {
   id      :String 
   title   :String
   name    :String

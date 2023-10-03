@@ -26,10 +26,8 @@ export default async (
       },
     });
     
-
     await sendEmail();
     
-
     return res.status(200).json(updatedBooking);
   } catch (error) {
     console.error("Error updating booking:", error);
