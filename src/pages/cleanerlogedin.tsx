@@ -1,20 +1,28 @@
 import { useState, useEffect } from 'react';
-import { Booking } from '../../types'
+import { useAuth } from '../lib/store';
+import { Cleaner } from '../../types';
+import { APIresponse, Booking, ErrorMsg } from '../../types'
 
 function CleanerLogedin() {
   const [bookings, setBookings] = useState<Array<Booking>>([]);
- 
+  const user: Cleaner = useAuth(state => state.auth)
 
   useEffect(() => {
     async function fetchBookings() {
       try {
-        const response = await fetch('/api/getBookings');
-        const data = await response.json() as Booking[];
+        const response = await fetch('/api/getBookings', {
+          method: 'POST',
+          headers: {
+            'Content-Type':'application/json'
+          },
+          body: JSON.stringify(user)
+        });
+        const body = await response.json() as APIresponse<Booking[]>
         if (response.ok) {
-          setBookings(data);
-        } else {
+          setBookings(body.data);
+        } else if (!response.ok) {
           // message type will be defined in the api
-          alert('Error fetching bookings: ' + data.message);
+          alert('Error fetching bookings: ' + body.message);
         }
       } catch (error) {
         alert('Failed to fetch bookings: ' + error.message);
@@ -30,7 +38,7 @@ function CleanerLogedin() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ bookingId })
+            body: JSON.stringify({ bookingId: bookingId, cleanerData: user })
         });
 
         if (response.ok) {

@@ -1,4 +1,11 @@
+export type ErrorMsg = {
+  message: string
+}
 
+export type APIresponse <T> ={
+  message: string;
+  data: T;
+}
 
 export type User = {
   id        :string  
