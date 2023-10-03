@@ -67,18 +67,18 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               }`}
             >
               <ul className="h-screen md:h-auto items-center justify-center md:flex ">
-                <li className="pb-3 py-2 text-center border-b-2 hover:text-yellow-500 hover:border-yellow-500  md:pb-0 md:px-2 md:border-b-0 md:hover:text-yellow-500 md:transform md:hover:scale-105 md:transition-transform md:duration-200">
+                <li className="styleLink">
                   <Link href="/" onClick={() => setNavbar(!navbar)}>
                     Home
                   </Link>
                 </li>
-                <li className="pb-3 py-2 text-center border-b-2 hover:text-yellow-500 hover:border-yellow-500  md:pb-0 md:px-2 md:border-b-0 md:hover:text-yellow-500 md:transform md:hover:scale-105 md:transition-transform md:duration-200">
+                <li className="styleLink">
                   {' '}
                   <Link href="/reviews" onClick={() => setNavbar(!navbar)}>
                     Reviews
                   </Link>
                 </li>
-                <li className="pb-3 py-2 text-center border-b-2 hover:text-yellow-500 hover:border-yellow-500  md:pb-0 md:px-2 md:border-b-0 md:hover:text-yellow-500 md:transform md:hover:scale-105 md:transition-transform md:duration-200">
+                <li className="styleLink">
                   {' '}
                   <Link href="/services" onClick={() => setNavbar(!navbar)}>
                     Services
@@ -95,7 +95,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   </button>
                 ) : (
                   <>
-                    <li className="pb-3 py-2 text-center border-b-2 hover:text-yellow-500  hover:border-yellow-500  md:pb-0 md:px-2 md:border-b-0 md:hover:text-yellow-500 md:transform md:hover:scale-105 md:transition-transform md:duration-200">
+                    <li className="styleLink">
                       <Link
                         data-cy="cleaner-signup"
                         href="/cleanersignup"
@@ -104,12 +104,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                         Cleaner
                       </Link>
                     </li>
-                    <li className="pb-3 py-2 text-center border-b-2 hover:text-yellow-500 hover:border-yellow-500  md:pb-0 md:px-2 md:border-b-0 md:hover:text-yellow-500 md:transform md:hover:scale-105 md:transition-transform md:duration-200">
+                    <li className="styleLink">
                       <Link href="/signup" onClick={() => setNavbar(!navbar)}>
                         Sign Up
                       </Link>
                     </li>
-                    <li className="pb-3 py-2 text-center border-b-2 hover:text-yellow-500  hover:border-yellow-500  md:pb-0 md:px-2 md:border-b-0 md:hover:text-yellow-500 md:transform md:hover:scale-105 md:transition-transform md:duration-200">
+                    <li className="styleLink">
                       <Link href="/login" onClick={() => setNavbar(!navbar)}>
                         Login
                       </Link>
