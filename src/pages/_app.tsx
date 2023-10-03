@@ -1,4 +1,4 @@
-import Layout from 'src/components/Layout';
+import Layout from '../components/Layout';
 import 'src/styles/globals.css';
 import React, { useEffect } from 'react';
 import { useAuth } from '../lib/store';

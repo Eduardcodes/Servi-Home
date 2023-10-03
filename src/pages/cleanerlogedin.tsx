@@ -1,16 +1,19 @@
 import { useState, useEffect } from 'react';
+import { Booking } from '../../types'
 
 function CleanerLogedin() {
-  const [bookings, setBookings] = useState([]);
+  const [bookings, setBookings] = useState<Array<Booking>>([]);
+ 
 
   useEffect(() => {
     async function fetchBookings() {
       try {
         const response = await fetch('/api/getBookings');
-        const data = await response.json();
+        const data = await response.json() as Booking[];
         if (response.ok) {
           setBookings(data);
         } else {
+          // message type will be defined in the api
           alert('Error fetching bookings: ' + data.message);
         }
       } catch (error) {
@@ -20,7 +23,7 @@ function CleanerLogedin() {
     fetchBookings();
   }, []);
 
-  const acceptBooking = async (bookingId) => {
+  const acceptBooking = async (bookingId: Booking["id"]) => {
     try {
         const response = await fetch('/api/updateBookingStatus', {
             method: 'POST',
