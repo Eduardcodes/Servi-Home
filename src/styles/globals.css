@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ------------- Links in navbar -------------  */
+
+.styleLink {
+  @apply pb-3 py-2 text-center border-b-2 hover:text-yellow-500 hover:border-yellow-500  md:pb-0 md:px-2 md:border-b-0 md:hover:text-yellow-500 md:transform md:hover:scale-105 md:transition-transform md:duration-200;
+}
