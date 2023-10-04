@@ -2,27 +2,28 @@ import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
 
 dotenv.config();
-
 const email = process.env.EMAIL;
 const pass = process.env.EMAIL_PASS;
+console.log('email', email)
 
 
 export const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: 'smtp.gmail.com',
   port: 587,
   secure: false,
   auth: {
     user: email,
-    pass,
+    pass: pass,
   },
 });
 
-export const sendEmail = async () => {
+export const sendEmail = async (email) => {
+  console.log('Yes the function is being called')
   try {
-    
+    console.log('EMAIL', email)
     await transporter.sendMail({
       from: `Servi Home <${email}>`,  
-      to: email,
+      to: `${email}`,
       subject: "Confirmation: Your Order Has Been Accepted",
       text: "Dear valued customer,\n\nWe're pleased to inform you that your order has been accepted. Our cleaner will be in touch with you shortly to finalize details and ensure a smooth service experience. Thank you for choosing Your Company Name.\n\nWarm regards,\nThe Your Company Name Team",
       html: `
@@ -38,4 +39,3 @@ export const sendEmail = async () => {
     console.error("Error sending email:", error);
   }
 };
-
