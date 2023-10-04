@@ -25,7 +25,7 @@ export default async function handler(
 
       
       const { password: _, ...userWithoutPassword } = user;
-      res.status(200).json({ message: 'User authenticated successfully', user: userWithoutPassword, token });
+      res.status(200).json({ message: 'User authenticated successfully', user: userWithoutPassword, token: token });
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: 'Authentication failed' });
