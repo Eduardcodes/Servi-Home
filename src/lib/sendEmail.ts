@@ -4,7 +4,6 @@ import nodemailer from 'nodemailer';
 dotenv.config();
 const email = process.env.EMAIL;
 const pass = process.env.EMAIL_PASS;
-console.log('email', email)
 
 
 export const transporter = nodemailer.createTransport({
@@ -22,7 +21,7 @@ export const sendEmail = async (email) => {
   try {
     console.log('EMAIL', email)
     await transporter.sendMail({
-      from: `Servi Home <${email}>`,  
+      from: `Servi Home <'${email}'>`,  
       to: `${email}`,
       subject: "Confirmation: Your Order Has Been Accepted",
       text: "Dear valued customer,\n\nWe're pleased to inform you that your order has been accepted. Our cleaner will be in touch with you shortly to finalize details and ensure a smooth service experience. Thank you for choosing Your Company Name.\n\nWarm regards,\nThe Your Company Name Team",

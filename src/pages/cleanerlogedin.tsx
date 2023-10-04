@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../lib/store';
 import { Cleaner } from '../../types';
+import { sendEmail } from '../lib/sendEmail';
 import { APIresponse, Booking, ErrorMsg } from '../../types'
 
 function CleanerLogedin() {
@@ -10,6 +11,7 @@ function CleanerLogedin() {
   useEffect(() => {
     async function fetchBookings() {
       try {
+        
         const response = await fetch('/api/getBookings', {
           method: 'POST',
           headers: {

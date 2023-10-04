@@ -10,7 +10,7 @@ export default async (
   if (req.method !== "POST") {
     return res.status(405).end();
   }
-
+  
   const { bookingId, cleanerData } = req.body;
 
   try {
@@ -27,8 +27,8 @@ export default async (
         user: true,
       },
     });
-    
-    await sendEmail();
+   
+    await sendEmail(cleanerData.cleaner.email);
     
     return res.status(200).json({data: updatedBooking, message: 'Very nice'});
   } catch (error) {
