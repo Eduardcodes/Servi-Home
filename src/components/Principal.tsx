@@ -29,7 +29,7 @@ export default function Principal() {
       </section>
 
       <section className="h-[calc(100vh-50px)] bg-zinc-400 p-8 md:h-5/6 md:p-12 flex justify-center text-white">
-        <div className="flex items-center">
+        <div className="flex flex-col items-center justify-center ">
           <p className="text-3xl  justify-center md:text-6xl max-w-6xl text-center leading-relaxed font-medium ">
             Don't miss the opportunity to elevate your living space to a new
             level of cleanliness and comfort. Try our services today and
