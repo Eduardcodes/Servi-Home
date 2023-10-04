@@ -83,14 +83,13 @@ function Logedin() {
   return (
     <div className=" bg-gradient-to-b from-gray-200 to-gray-400 p-5 text-black min-h-screen">
       <div className="flex justify-center items-center h-screen ">
-        <h2
+        <p
           data-cy="message"
-          className="text-3xl md:text-5xl font-serif leading-tight"
+          className="text-3xl md:text-6xl font-serif leading-tight md:w-2/5 text-center"
         >
-          Rediscover the charm <br></br>of your furniture. Let <br></br>us give
-          it a fresh, pristine <br></br>makeover. Your home <br></br>deserves
-          the best – and <br></br>so do you!
-        </h2>
+          Rediscover the charm of your furniture. Let us give it a fresh,
+          pristine makeover. Your home deserves the best – and so do you!
+        </p>
       </div>
 
       {/* Booking services */}
