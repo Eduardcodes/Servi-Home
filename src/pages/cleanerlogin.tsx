@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useAuth } from '../lib/store';
 
 function Login() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
+  const setAuth = useAuth(state => state.setAuth)
 
   const [error, setError] = useState(null);
 
   const router = useRouter();
-
+  
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
     console.log(typeof(e))
     const { name, value } = e.currentTarget;
@@ -35,9 +37,13 @@ function Login() {
 
       const data = await response.json();
       localStorage.setItem('auth', JSON.stringify(data));
-
+      
+      setAuth(data)
+      
       if (response.status === 200) {
         router.push('/cleanerlogedin');
+        
+
       } else {
         const data = await response.json();
         setError(data.error || 'Login failed');

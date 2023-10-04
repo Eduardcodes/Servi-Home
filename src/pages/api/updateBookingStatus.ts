@@ -11,13 +11,15 @@ export default async (
     return res.status(405).end();
   }
 
-  const { bookingId } = req.body;
+  const { bookingId, cleanerData } = req.body;
 
   try {
+    const id = cleanerData.cleaner.id
     const updatedBooking = await prisma.booking.update({
       where: { id: bookingId },
       data: {
         status: 'ACCEPTED',
+        cleanerId: id
       },
       include: {
         address: true,
@@ -26,14 +28,12 @@ export default async (
       },
     });
     
-
     await sendEmail();
     
-
-    return res.status(200).json(updatedBooking);
+    return res.status(200).json({data: updatedBooking, message: 'Very nice'});
   } catch (error) {
     console.error("Error updating booking:", error);
-    return res.status(500).json({ message: `Internal Server Error: ${error.message}` });
+    return res.status(500).json({ message: `Internal Server Error: ${error.message}`, data: null});
   } finally {
     await prisma.$disconnect();
   }

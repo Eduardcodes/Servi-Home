@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from 'next/router';
+import { useAuth } from "../lib/store";
 
 function CleanerSignUp() {
   const [formData, setFormData] = useState({
@@ -42,6 +43,7 @@ function CleanerSignUp() {
 
         
         localStorage.setItem('token', data.token);
+        useAuth.getState().setAuth(data.user)
 
         
         router.push('/cleanerlogedin');
