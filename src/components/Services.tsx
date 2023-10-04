@@ -5,7 +5,7 @@ export default function Service() {
   return (
     <>
       <section className="max-h-fit  bg-zinc-500 p-12 flex flex-col text-white items-center ">
-        <h2 className="text-4xl md:text-6xl mb-6 text-center font-bold font-serif tracking-wider">
+        <h2 className="text-4xl md:text-6xl mb-6 md:mb-10 text-center font-bold font-serif tracking-wider ">
           Our Services
         </h2>
 

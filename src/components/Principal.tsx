@@ -9,7 +9,7 @@ export default function Principal() {
         }
       >
         <div className="flex flex-col justify-center space-y-8">
-          <h1 className="text-3xl text-center pt-8 md:pt-0  md:text-left md:text-6xl font-bold leading-tight">
+          <h1 className="text-3xl text-center pt-8 md:pt-0  md:text-left md:text-4xl 2xl:text-6xl font-bold leading-tight">
             Transform your space <br />
             into a haven of cleanliness <br />
             and freshness.
@@ -28,13 +28,13 @@ export default function Principal() {
           alt="Cleaning"
           width={750}
           height={750}
-          className="rounded-full shadow-2xl hover:scale-105 transform transition-transform duration-300 border-4 border-yellow-500 md:p-1"
+          className="rounded-full shadow-2xl hover:scale-105 transform transition-transform duration-300 border-4 border-yellow-500 md:p-1 md:w-[520px] 2xl:w-[750px]"
         />
       </section>
 
       <section className={'styleSection md:h-5/6 md:p-12 bg-zinc-400'}>
         <div className="flex flex-col items-center justify-center ">
-          <p className="text-3xl  justify-center md:text-6xl max-w-6xl text-center leading-relaxed font-medium ">
+          <p className="text-3xl  justify-center md:text-4xl 2xl:text-6xl max-w-6xl text-center leading-relaxed font-medium ">
             Don't miss the opportunity to elevate your living space to a new
             level of cleanliness and comfort. Try our services today and
             experience the difference for yourself!

@@ -10,6 +10,8 @@ function Login() {
     password: "",
   });
 
+  const setAuth = useAuth((state)=>state.setAuth)
+
   const [error, setError] = useState(null);
 
   const router = useRouter(); 
@@ -36,11 +38,10 @@ function Login() {
       });
 
       const data = await response.json();
-      localStorage.setItem("auth", JSON.stringify(data.user));
-      useAuth.getState().setAuth(data.user)
-      // setAuth(data.user)
-
+      
       if (response.status === 200) {
+        localStorage.setItem("auth", JSON.stringify(data.user));
+        setAuth(data.user)
         
         router.push("/logedin");
       } else {
