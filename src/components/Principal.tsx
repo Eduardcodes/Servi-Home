@@ -34,8 +34,8 @@ export default function Principal() {
             Don't miss the opportunity to elevate your living space to a new
             level of cleanliness and comfort. Try our services today and
             experience the difference for yourself!
-            <div className=" mx-auto h-0.5 mt-10 bg-white w-3/4"></div>
           </p>
+          <div className=" mx-auto h-0.5 mt-10 bg-white w-3/4"></div>
         </div>
       </section>
     </div>
