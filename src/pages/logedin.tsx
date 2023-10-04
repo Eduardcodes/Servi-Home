@@ -2,16 +2,14 @@ import React, { useState } from 'react';
 // import {Service} from '../../types'
 
 type Service = {
-  title: string
-  rugmeasure: string
-  rugcondition: string
-  measure: string
-  condition: string
-  material: string
-  servicetable: string
-}
-
-
+  title: string;
+  rugmeasure: string;
+  rugcondition: string;
+  measure: string;
+  condition: string;
+  material: string;
+  servicetable: string;
+};
 
 function Logedin() {
   const [services, setServices] = useState([]);
@@ -26,12 +24,11 @@ function Logedin() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
 
-
-  const addService = (service:Service) => {
+  const addService = (service: Service) => {
     setServices([...services, service]);
   };
 
-  const handleSubmit = async (e : React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const localAuthData = localStorage.getItem('auth');
     const auth = JSON.parse(localAuthData);
@@ -84,21 +81,28 @@ function Logedin() {
   };
 
   return (
-    <div className="bg-gradient-to-b from-gray-200 to-gray-400 p-5 text-black min-h-screen">
-      <div className="flex justify-center items-center h-screen">
-        <h2 data-cy="message" className="text-5xl font-serif leading-tight">
+    <div className=" bg-gradient-to-b from-gray-200 to-gray-400 p-5 text-black min-h-screen">
+      <div className="flex justify-center items-center h-screen ">
+        <h2
+          data-cy="message"
+          className="text-3xl md:text-5xl font-serif leading-tight"
+        >
           Rediscover the charm <br></br>of your furniture. Let <br></br>us give
           it a fresh, pristine <br></br>makeover. Your home <br></br>deserves
           the best – and <br></br>so do you!
         </h2>
       </div>
-      <div className="overflow-x-auto">
-        <div className="flex space-x-6 justify-center">
-          <form
-            data-cy="rug-revitalize"
-            className="bg-white shadow-lg border border-gray-200 p-6 rounded-lg mx-2 w-full md:w-1/2 lg:w-1/4 relative text-black flex flex-col items-center space-y-4"
-          >
-            <h3 data-cy="h3-rug" className="text-lg mb-6 text-center">
+
+      {/* Booking services */}
+      <div className="flex justify-center pb-5 md:pb-9">
+        <h1 className="font-semibold text-2xl md:text-5xl place-items-center ">
+          Book a service
+        </h1>
+      </div>
+      <div className="overflow-x-auto  ">
+        <div className="max-w-4xl md:max-w-none flex-col gap-5 flex md:flex-row md:space-x-6 justify-center">
+          <form data-cy="rug-revitalize" className={'styleForm'}>
+            <h3 data-cy="h3-rug" className={'styleFormTitle'}>
               Revitalize Your Rugs
             </h3>
             <img
@@ -107,7 +111,7 @@ function Logedin() {
               alt="Mueble"
               width={150}
               height={150}
-              className="rounded-full shadow-lg hover:scale-105 transform transition-transform duration-300 border border-yellow-500 p-1"
+              className={'styleFormImg'}
             />
 
             <div className="w-full">
@@ -117,7 +121,7 @@ function Logedin() {
                 name="measure"
                 value={rugmeasure}
                 onChange={(e) => setRugmeasure(e.target.value)}
-                className="block w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
+                className={'styleInputForm'}
               >
                 <option value="options">Options</option>
                 <option value="80*150 cm">80*150 cm</option>
@@ -134,7 +138,7 @@ function Logedin() {
                 name="title"
                 value={rugcondition}
                 onChange={(e) => setRugcondition(e.target.value)}
-                className="block w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
+                className={'styleInputForm'}
                 required
               />
             </div>
@@ -147,14 +151,14 @@ function Logedin() {
                 name="title"
                 value={material}
                 onChange={(e) => setMaterial(e.target.value)}
-                className="block w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
+                className={'styleInputForm'}
                 required
               />
             </div>
 
             <button
               data-cy="button-rug"
-              className="bg-blue-500 hover:bg-blue-600 border border-blue-500 text-white py-2 px-4 rounded-full cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:rotate-6"
+              className={'styleFormButton'}
               onClick={(e) => {
                 e.preventDefault();
                 addService({
@@ -172,20 +176,17 @@ function Logedin() {
             </button>
           </form>
 
-          <form
-            data-cy="renew-furniture"
-            className="bg-white shadow-lg border border-gray-200 p-6 rounded-lg mx-2 w-full md:w-1/2 lg:w-1/4 relative text-black flex flex-col items-center space-y-4"
-          >
-            <h3 data-cy="h3-renew" className="text-lg mb-6 text-center">
+          <form data-cy="renew-furniture" className={'styleForm'}>
+            <h3 data-cy="h3-renew" className={'styleFormTitle'}>
               Renew Your Furniture
             </h3>
             <img
               data-cy="img-renew"
-              src="/mueble.webp"
+              src="/mueble.png"
               alt="Mueble"
-              width={200}
-              height={200}
-              className="rounded-full shadow-lg hover:scale-105 transform transition-transform duration-300 border border-yellow-500 p-1"
+              width={150}
+              height={150}
+              className={'styleFormImg'}
             />
 
             <div className="w-full">
@@ -195,7 +196,7 @@ function Logedin() {
                 name="measure"
                 value={measure}
                 onChange={(e) => setMeasure(e.target.value)}
-                className="block w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
+                className={'styleInputForm'}
               >
                 <option value="seats">Options</option>
                 <option value="One">1 seat</option>
@@ -211,7 +212,7 @@ function Logedin() {
                 name="measure"
                 value={condition}
                 onChange={(e) => setCondition(e.target.value)}
-                className="block w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
+                className={'styleInputForm'}
                 required
               >
                 <option value="Options">Options</option>
@@ -223,7 +224,7 @@ function Logedin() {
 
             <button
               data-cy="submit-renew"
-              className="bg-blue-500 hover:bg-blue-600 border border-blue-500 text-white py-2 px-4 rounded-full cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:rotate-6"
+              className={'styleFormButton'}
               onClick={(e) => {
                 e.preventDefault();
                 addService({
@@ -241,11 +242,8 @@ function Logedin() {
             </button>
           </form>
 
-          <form
-            data-cy="elevate-tabletops"
-            className="bg-white shadow-lg border border-gray-200 p-6 rounded-lg mx-2 w-full md:w-1/2 lg:w-1/4 relative text-black flex flex-col items-center space-y-4"
-          >
-            <h3 data-cy="h3-tabletops" className="text-lg mb-6 text-center">
+          <form data-cy="elevate-tabletops" className={'styleForm'}>
+            <h3 data-cy="h3-tabletops" className={'styleFormTitle'}>
               Elevate Your Tabletops
             </h3>
             <img
@@ -254,7 +252,7 @@ function Logedin() {
               alt="Table"
               width={150}
               height={150}
-              className="rounded-full shadow-lg hover:scale-105 transform transition-transform duration-300 border border-yellow-500 p-1"
+              className={'styleFormImg'}
             />
 
             <div className="w-full">
@@ -264,7 +262,7 @@ function Logedin() {
                 name="servicetable"
                 value={servicetable}
                 onChange={(e) => setServicetable(e.target.value)}
-                className="block w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
+                className={'styleInputForm'}
               >
                 <option value="Options">Options</option>
                 <option value="Polish">Polish</option>
@@ -274,7 +272,7 @@ function Logedin() {
 
             <button
               data-cy="submit-tabletops"
-              className="bg-blue-500 hover:bg-blue-600 border border-blue-500 text-white py-2 px-4 rounded-full cursor-pointer transform transition-transform duration-300 hover:scale-105 hover:rotate-6"
+              className={'styleFormButton'}
               onClick={(e) => {
                 e.preventDefault();
                 addService({
@@ -360,7 +358,7 @@ function Logedin() {
                 <button
                   data-cy="selected-delete"
                   onClick={() => handleDelete(index)}
-                  className="mt-4 bg-blue-500 hover:bg-blue-600 border border-blue-500 text-white py-2 px-4 rounded-full cursor-pointer transform transition-transform duration-300 hover:scale-105"
+                  className={'styleFormButton'}
                 >
                   Remove from List
                 </button>
@@ -382,7 +380,7 @@ function Logedin() {
               will obtain an email for confirmation
             </p>
             <button
-              className="mt-4 border border-black bg-transparent text-black hover:bg-blue-500 hover:text-white py-2 px-4 rounded-full cursor-pointer transform transition-transform duration-300 hover:scale-105"
+              className={'styleButtonService'}
               onClick={(e) => handleSubmit(e)}
             >
               Send to cleaner
@@ -413,7 +411,7 @@ function Logedin() {
                 <button
                   data-cy="close-modal-button"
                   type="button"
-                  className="px-4 py-2 text-sm font-medium text-white bg-blue-500 border border-transparent rounded-md hover:bg-blue-600 focus:outline-none focus:border-blue-700 focus:ring focus:ring-blue-200 active:bg-blue-700"
+                  className={'styleFormButton'}
                   onClick={closeModal}
                 >
                   Close

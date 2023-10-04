@@ -89,7 +89,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
                   <button
                     data-cy="log-out"
                     onClick={(e) => onLogout(e)}
-                    className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded transition-colors duration-200"
+                    className="mt-4 w-full  md:mt-1 bg-red-600 hover:bg-red-700 px-4 py-2 rounded transition-colors duration-200"
                   >
                     Log Out
                   </button>

@@ -3,7 +3,11 @@ import Link from 'next/link';
 export default function Principal() {
   return (
     <div className=" text-center md:text-lefth-full font-serif ">
-      <section className=" h-[calc(100vh-50px)]  flex-col-reverse bg-gradient-to-r from-zinc-500 to-zinc-600 md:flex-row p-8 md:p-12 justify-center md:justify-around items-center md:h-screen text-white flex">
+      <section
+        className={
+          'styleSection flex-col-reverse bg-gradient-to-r from-zinc-500 to-zinc-600 md:h-screen md:flex-row md:justify-around items-center '
+        }
+      >
         <div className="flex flex-col justify-center space-y-8">
           <h1 className="text-3xl text-center pt-8 md:pt-0  md:text-left md:text-6xl font-bold leading-tight">
             Transform your space <br />
@@ -28,7 +32,7 @@ export default function Principal() {
         />
       </section>
 
-      <section className="h-[calc(100vh-50px)] bg-zinc-400 p-8 md:h-5/6 md:p-12 flex justify-center text-white">
+      <section className={'styleSection md:h-5/6 md:p-12 bg-zinc-400'}>
         <div className="flex flex-col items-center justify-center ">
           <p className="text-3xl  justify-center md:text-6xl max-w-6xl text-center leading-relaxed font-medium ">
             Don't miss the opportunity to elevate your living space to a new
