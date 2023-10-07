@@ -5,6 +5,8 @@ import { useAuth } from '../lib/store';
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
+
+    
     const auth = localStorage.getItem('auth');
     if (auth) {
       useAuth.getState().setAuth(JSON.parse(auth));

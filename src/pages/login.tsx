@@ -38,9 +38,10 @@ function Login() {
       });
 
       const data = await response.json();
-      
+      console.log(data, "data from server")
       if (response.status === 200) {
-        localStorage.setItem("auth", JSON.stringify(data.user));
+        //localStorage.setItem("auth", JSON.stringify(data.user));
+        localStorage.setItem("auth", JSON.stringify(data.token));
         setAuth(data.user)
         
         router.push("/logedin");
